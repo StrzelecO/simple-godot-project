@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci2cdbmlim6cb"]
+
+[ext_resource type="Script" path="res://StartBtn.gd" id="1_et00m"]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="StartBtn" type="Button" parent="."]
+offset_left = 509.0
+offset_top = 219.0
+offset_right = 666.0
+offset_bottom = 282.0
+text = "START"
+script = ExtResource("1_et00m")
+
+[connection signal="button_up" from="StartBtn" to="StartBtn" method="_on_button_up"]

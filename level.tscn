@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8x540m1wj3q5"]
+
+[ext_resource type="Texture2D" uid="uid://dwl88oroe7elb" path="res://icon.svg" id="1_0amce"]
+[ext_resource type="Texture2D" uid="uid://c8wjw2gigexqp" path="res://imgs/obstacle.png" id="4_heuj7"]
+[ext_resource type="Script" path="res://Player.gd" id="4_ode6n"]
+[ext_resource type="Texture2D" uid="uid://p3o3joiryn3a" path="res://imgs/obstacle2.png" id="5_twjtl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hh2r"]
+size = Vector2(128, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14wk1"]
+size = Vector2(214, 128.5)
+
+[node name="FirstLevel" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(600, 200)
+script = ExtResource("4_ode6n")
+
+[node name="PlayerImg" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_0amce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_7hh2r")
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(299, 391)
+rotation = 0.598648
+metadata/_edit_group_ = true
+
+[node name="ObstacleImg" type="Sprite2D" parent="Obstacle"]
+position = Vector2(4, 3)
+scale = Vector2(2.32609, 2.1168)
+texture = ExtResource("4_heuj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+position = Vector2(4.73236, 1.61383)
+shape = SubResource("RectangleShape2D_14wk1")
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+position = Vector2(819, 253)
+rotation = -0.837758
+metadata/_edit_group_ = true
+
+[node name="ObstacleImg" type="Sprite2D" parent="Obstacle2"]
+position = Vector2(4, 3)
+scale = Vector2(2.32609, 2.1168)
+texture = ExtResource("5_twjtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+position = Vector2(2.2541, 3.30439)
+shape = SubResource("RectangleShape2D_14wk1")
